@@ -1,0 +1,442 @@
+:root {
+  --fuente: "Roboto", sans-serif;
+
+  --azul1: #276bca;
+  --azul2: #3d88f0;
+  --gris1: #ccc;
+  --gris2: #d4d4d4;
+  --gris3: #eceaea;
+  --gris4: rgb(152, 152, 152);
+  --rojo: #d22020;
+  --blanco: #fff;
+  --negro: #000;
+}
+
+/*= Reset CSS */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+#body-videos {
+  display: flex;
+}
+
+/*= Globals */
+
+button,
+input {
+  font-family: var(--fuente);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--negro);
+}
+
+.point {
+  cursor: pointer;
+}
+
+/*= Header */
+header {
+  background-color: var(--blanco);
+  border-bottom: solid 1px var(--gris1);
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#youtube-logo {
+  height: 1.5rem;
+}
+
+#app-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+#search-menu {
+  display: flex;
+  align-items: center;
+}
+
+#search-box {
+  height: 35px;
+  margin: 0;
+  border-radius: 0.2rem 0 0 0.2rem;
+  border: solid 1px var(--gris1);
+}
+
+#search-btn {
+  height: 35px;
+  margin: 0;
+  text-align: center;
+  border-radius: 0 0.2rem 0.2rem 0;
+  border: solid 1px var(--gris1);
+}
+
+.icon-small {
+  font-size: 22px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.outlined-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: solid 1px var(--azul1);
+  color: var(--azul1);
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#categories-section {
+  padding: 1.3rem;
+  border-bottom: solid 1px var(--gris1);
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding-top: 5.5rem;
+}
+
+.chip {
+  background-color: var(--gris2);
+  padding: 0.4rem 0.8rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.chip.selected {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+.chip:hover {
+  background-color: var(--gris3);
+  color: var(--negro);
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 2rem;
+  column-gap: 1rem;
+  row-gap: 2.4rem;
+}
+
+.card {
+  cursor: pointer;
+  transform: none;
+  transition: transform 350ms ease-out;
+}
+
+.card:hover {
+  transform: scaleX(1.2) scaleY(1.2);
+  transition-delay: 1s;
+  background-color: var(--blanco);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.45); /*coordenadaX, coordenadaY, blur, amplitud, color*/
+  border-radius: 0.1rem;
+}
+
+.card-header {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+}
+
+.author-info {
+  padding: 0 0.7rem;
+}
+
+.author-avatar {
+  border-radius: 100%;
+  width: 50px;
+}
+
+.video-info {
+  padding: 0 0.7rem;
+}
+
+.video-title {
+  display: block;
+}
+
+.channel-name {
+  display: block;
+}
+
+#video-comments {
+  padding: 5.3rem 1.5rem 4rem 4rem;
+  width: 70%;
+}
+
+video {
+  width: 970px;
+}
+
+#section-info {
+  margin-bottom: 18px;
+}
+
+#hashtags {
+  color: var(--azul2);
+  cursor: pointer;
+}
+
+#video-title {
+  margin: 5px 0 14px 0;
+  font-size: 20px;
+}
+
+#video-info {
+  font-size: 14px;
+}
+
+#section-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 15px;
+  padding-left: 0.5rem;
+}
+
+.video-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+#suscrip-card {
+  border: solid 1px var(--gris1);
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+}
+
+#channel-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#channel-avatar {
+  border-radius: 100%;
+  margin: 0;
+}
+
+#channel-name {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+}
+
+#btn-suscrip {
+  background-color: var(--rojo);
+  border: none;
+  color: var(--blanco);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  height: 40px;
+  padding: 0 1.2rem;
+  border-radius: 0.1rem;
+  cursor: pointer;
+}
+
+#comments-section {
+}
+
+#comments-counter {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+#comments-total {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#comments-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#comment-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-bottom: 2rem;
+}
+
+#comment-profile-avatar {
+  width: 50px;
+  border-radius: 100%;
+}
+
+#comment-box {
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: solid 1px var(--gris1);
+}
+
+#comments {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.7rem;
+  padding: 1rem;
+}
+
+.comment-profile {
+  padding-bottom: 0.5rem;
+}
+
+.comment-avatar {
+  width: 50px;
+  border-radius: 100%;
+}
+
+.comment-info {
+}
+
+.comment-user {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 0.4rem;
+}
+
+.comment-user strong {
+  font-size: 14px;
+}
+
+.comment-text {
+  font-size: 14px;
+}
+
+.comment-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.6rem 0;
+}
+
+.icon-usmall {
+  font-size: 16px;
+}
+
+.comment-likes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comment-dislike {
+  display: flex;
+  align-items: center;
+}
+
+.comment-answer {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--gris4);
+  font-weight: 500;
+}
+
+.comment-answers {
+  display: flex;
+  align-items: center;
+  color: var(--azul2);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+aside {
+  width: 30%;
+}
+
+#videos-aside {
+  padding-top: 5.3rem;
+}
+
+.video-aside {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  width: 85%;
+  padding: 0.3rem 0;
+}
+
+.video-aside-image {
+}
+
+.video-aside-mini {
+  width: 200px;
+}
+
+.video-aside-info {
+}
+
+.video-aside-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.video-aside-user {
+  display: block;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.video-aside-views {
+}
+
+.video-aside-publish {
+}
